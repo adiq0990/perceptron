@@ -1,0 +1,16 @@
+#Wprowadź kody poniżej aby skopiować repo, oraz utworzyć i uruchomić obraz dockera:
+
+git clone https://github.com/adiq0990/perceptron.git
+
+cd perceptron  
+
+docker build -t perceptron-app .  
+
+#wybierz port na, którym chcesz uruchomić program
+docker run -p 5000:5000 perceptron-app
+
+
+
+#Otwórz nowy terminal i uruchom poniższe polecenie z wybraymi danymi do predykcji
+
+curl -X POST http://localhost:5005/predict -H "Content-Type: application/json" -d '{"features": [1.9, 0.6]}'
